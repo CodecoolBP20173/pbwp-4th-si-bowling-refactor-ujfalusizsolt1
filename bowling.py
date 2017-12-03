@@ -8,8 +8,6 @@ def score(game):
             result += 10 - last
         else:
             result += get_value(game[i])
-        # if not in_first_half:
-            # frame += 1
         if frame < 10 and get_value(game[i]) == 10:
             if game[i] == '/':
                 result += get_value(game[i + 1])
@@ -26,13 +24,14 @@ def score(game):
             in_first_half = False
         else:
             in_first_half = True
-        if game[i] == 'X' or game[i] == 'x':
+        if game[i].lower() == 'x':
             in_first_half = True
             frame += 1
     return result
 
 
 def get_value(char):
+    '''Given a character returns its value in bowling or raises an error'''
     numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
     if char in numbers:
         return int(char)
