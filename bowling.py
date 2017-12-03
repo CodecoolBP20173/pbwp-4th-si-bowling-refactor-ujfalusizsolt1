@@ -1,4 +1,5 @@
 def score(game):
+    '''Given a scoreboard of a bowling match returns the final score'''
     result = 0
     frame = 1
     in_first_half = True
